@@ -67,3 +67,4 @@ Basic script that will make the secret santa draw. Given two files by input, one
     ``` bash
     amigo.py [path of the contact list] [path of the message]
     ```
+# amigoInvisible

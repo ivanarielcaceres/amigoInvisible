@@ -1,0 +1,6 @@
+Hola [namefrom] !
+
+Te ha tocado [nameto]
+
+Terminos y condiciones:
+El valor del presente debe superar el monto de 50.000 gs. y no existe límite máximo.

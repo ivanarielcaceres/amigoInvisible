@@ -32,7 +32,7 @@ class Pairplayer(object):
 dictionary_from = {}
 dictionary_to = {}
 text = ""
-subject = "Amigo invisible 2017"
+subject = "Invisible Friend - SISP 2018"
 
 def fill_dictionary(arg):
     global dictionary_from
@@ -41,23 +41,22 @@ def fill_dictionary(arg):
     dictionary_from[friend_list[0]] = friend_list[1]
 
 def read_list(name):
-    f = open(name, 'rw')
-    print "Reading list"
+    f = open(name, 'r+')
+    print ("Reading list")
     for line in f:
             fill_dictionary(line)
 
     global dictionary_to
     dictionary_to = dictionary_from.copy()
-    print "List readed"
+    print ("List readed")
 
 def mix_names():
-    print "Mixing names"
+    print ("Mixing names")
     length = len(dictionary_from)
     i = 0
     time = 0
     list_players = []
     while i < length :
-
         namefrom = random.choice(dictionary_from.keys())
         mailfrom = dictionary_from[namefrom]
         playerfrom = Player(namefrom,mailfrom)
@@ -74,20 +73,21 @@ def mix_names():
             i= i+1
         time = time+1
         if time == (length*3):
-            print "Error, you have to repeat the process. A person has been matched with himself/herself"
+            print ("Error, you have to repeat the process. A person has been matched with himself/herself")
             sys.exit()
 
-    print "Names mixed"
+    print ("Names mixed")
     return list_players
 
 
 def send_mail(players):
     i = 1
-    print "Sending mails"
+    print ("Sending mails")
     for value in players:
         value.playerfrom.msg = text.replace('[namefrom]',value.playerfrom.name).replace('[nameto]',value.playerto.name)
-        username = 'manoinocenteavila@gmail.com'
-        password = 'manoinocente'
+        print('From: {}, To: {}'.format(value.playerfrom.name, value.playerto.name))
+        username = 'ivansfy@gmail.com'
+        password = ''
         server = smtplib.SMTP('smtp.gmail.com:587')
         server.starttls()
         server.ehlo()
@@ -96,16 +96,16 @@ def send_mail(players):
         message ='Subject: {}\n\n{}'.format(subject, value.playerfrom.msg)
         server.sendmail(username, value.playerfrom.mail , message)
         server.quit()
-        print "The " + str(i) + " mail has been sent"
+        print ("The " + str(i) + " mail has been sent")
         i = i+1
-    print "All mails have been sent"
+    print ("All mails have been sent")
 
 if __name__ == "__main__":
     if len(sys.argv) > 2:
-        f = open(str(sys.argv[2]), 'rw')
-        text = f.read();
+        f = open(str(sys.argv[2]), 'r+')
+        text = f.read()
         read_list(str(sys.argv[1]))
         list_players = mix_names()
         send_mail(list_players)
     else:
-        print "Script not properly executed: amigo.py [list_path] [text]"
+        print ("Script not properly executed: amigo.py [list_path] [text]")
