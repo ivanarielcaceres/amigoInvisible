@@ -63,7 +63,7 @@ def mix_names():
         nameto = random.choice(list(dictionary_to))
         mailto = dictionary_to[nameto]
         playerto = Player(nameto,mailto)
-        print('From: {}, To: {}'.format(namefrom, nameto))
+        print('From: {} - {}, To: {} - {}'.format(namefrom, mailfrom, nameto, mailto))
 
         if mailto != mailfrom:
             del dictionary_to[nameto]
@@ -106,6 +106,8 @@ if __name__ == "__main__":
         text = f.read()
         read_list(str(sys.argv[1]))
         list_players = mix_names()
-        # send_mail(list_players)
+        input("Press Enter to continue...")
+        print('OK')
+        send_mail(list_players)
     else:
         print ("Script not properly executed: amigo.py [list_path] [text]")

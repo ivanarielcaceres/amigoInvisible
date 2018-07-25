@@ -1,6 +1,20 @@
-Hola [namefrom] !
+Probando InvisibleApp
+
+Buenas [namefrom],
+Este es un correo automatico enviado por el programa InvisibleApp.
 
 Te ha tocado [nameto]
 
 Terminos y condiciones:
-El valor del presente debe superar el monto de 50.000 gs. y no existe límite máximo.
+Si usted ha recibido este correo, ya esta participando.
+El valor del presente debe superar el monto de 50.000 gs. y no existe limite maximo (decision unanime).
+
+Se ha llegado a un acuerdo de que los siguientes items estan determinantemente prohibidos:
+1. Prestobarba
+2. Cuadros o porta retratos
+3. Boligrafos o lapices
+4. Bolsas de basura
+5. Cuadernos o fotocopias de libros
+6. Jabon o desodorantes
+
+Obs.: La falta de tilde en las palabras son debido a un problema con la libreria que envia el email.
